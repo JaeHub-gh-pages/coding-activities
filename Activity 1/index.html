@@ -1,0 +1,26 @@
+<style>
+#button-1{display:inline-block;}
+</style>
+
+<html>
+    <head>
+        <title>Activity 1</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel="stylesheet" href = "style.css" type="text/css">
+        <link rel="stylesheet" href = "animate.min.css">
+    </head>
+    <body>
+        <div id = "button-div">
+            <button id = "button-1" class = 'btn btn-lg;slideInLeft' onClick = "setbackground();spin(document.getElementById('button-1'));Update()">Click Here to Get Your Eyes Destroyed</button>
+        </div>
+        <script type = "text/javascript" src = "stylish.js"></script>
+    </body>
+</html>
+
+<script>
+    function spin(object){
+        setInterval(function() {
+    object.style.transform += "rotate(10deg)";
+     }, 1);
+      }
+</script>
