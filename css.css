@@ -1,0 +1,15 @@
+body{
+    display:flex;
+    flex-direction:column; 
+}
+
+#One{
+    text-align: center;
+    padding: 100;
+    font-size: 50
+}
+
+#Two{
+    text-align:center; 
+    padding:100;
+}
