@@ -56,33 +56,12 @@ function setbackgroundTitle()
 
 }
 
-
-var Canvas = document.getElementById("button-1");
-var ctx = Canvas.getContext("2d");
-
-var startAngle = (2*Math.PI);
-var endAngle = (Math.PI*1.5);
-var currentAngle = 0;
-
-var raf = window.mozRequestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.msRequestAnimationFrame ||
-    window.oRequestAnimationFrame;
-
-function Update(){
-    //Clears
-    ctx.clearRect(0,0,Canvas.width,Canvas.height);
-
-    //Drawing
-    ctx.beginPath();                  
-    ctx.arc(40, 40, 30, startAngle + currentAngle, endAngle + currentAngle, false);
-
-    ctx.strokeStyle = "orange";
-    ctx.lineWidth = 11.0;
-    ctx.stroke();
-
-    currentAngle += 0.02;
-    document.getElementById("angle").innerHTML=currentAngle;
-    raf(Update);
+function sparkle() {
+    var x = document.getElementById("sparkles");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+        
+    }
 }
-raf(Update);
