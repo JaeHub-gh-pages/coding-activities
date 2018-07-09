@@ -1,0 +1,84 @@
+<html>
+    <head>
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel = "stylesheet" type = "text/css" href = "animate.css">
+        <link rel = "stylesheet" type = "text/css" href = "rps.css">
+    </head>
+    
+    <body>
+        <h1>Rock Paper Scissors</h1>
+        
+        <p id = "compMessage"> Hello World.
+        </p>
+        
+        <div>
+            <button id = "rock" onclick="rps('rock')">Rock</button>
+            <button id = "paper" onclick="rps('paper')">Paper</button>
+            <button id = "scissors" onclick="rps('scissors')">Scissors</button>
+        </div>
+        
+        <p id = "message">
+        </p>
+        
+        <script>
+            function rps(item){
+                var random = Math.floor(Math.random() * 3);
+                var randomItem;
+                
+                if(random === 0){
+                    randomItem = 'rock'; 
+                   }else if(random === 1){
+                        randomItem = 'paper';
+                   } else{
+                        randomItem = 'scissors';
+                   }
+                    
+                    if(item === randomItem){
+                        document.getElementById("message").innerHTML = "It's a Tie!";
+                        document.getElementById("compMessage").innerHTML = randomItem.toUpperCase() + ".";
+                   }else if(randomItem === 'rock'){
+                       if(item === 'paper'){
+                           document.getElementById("message").innerHTML = "Paper beats rock for some reason... YOU WIN!";
+                           document.getElementById("compMessage").innerHTML = "ROCK.";
+                           animate('paper','bounce');
+                       }else{
+                            document.getElementById("message").innerHTML = "Rocks Break Scissors! YOU LOSE!";
+                            document.getElementById("compMessage").innerHTML = "ROCK.";
+                           animate('rock','bounce');
+                       }
+                   } else if(randomItem === 'paper'){
+                        if(item === 'scissors'){
+                            document.getElementById("message").innerHTML = "Scissors cut Paper! YOU WIN!";
+                            document.getElementById("compMessage").innerHTML = "PAPER.";
+                            animate('scissors','bounce');
+                        }else{
+                            document.getElementById("message").innerHTML = "Paper wraps rock in eternal doom! You Obviously Lose.";
+                            document.getElementById("compMessage").innerHTML = "PAPER.";
+                            animate('paper','bounce');
+                        }
+                   } else{
+                        if(item === 'rock'){
+                            document.getElementById("message").innerHTML = "Scissors break to rock! You Win!!!";
+                            document.getElementById("compMessage").innerHTML = "SCISSORS.";
+                            animate('rock','bounce');
+                        }else{
+                            document.getElementById("message").innerHTML = "Did you know scissor cuts paper? You Lose!";
+                            document.getElementById("compMessage").innerHTML = "SCISSORS.";
+                            animate('scissors','bounce');
+                        }
+                   }
+                }
+            
+            function animate(element,name){
+                document.getElementById(element).classList.toggle(name);
+                document.getElementById(element).classList.toggle('animated');
+                setTimeout(function(){
+                    document.getElementById(element).classList.toggle(name);
+                    document.getElementById(element).classList.toggle('animated');
+                },1000)
+            }
+                           
+        </script>
+        
+    </body>
+</html>
